@@ -1,0 +1,20 @@
+<!-->HEADER</!-->
+<ion-header>
+  <div></div>
+</ion-header>
+<!-->FIN HEADER</!-->
+
+<!-->CONTENT</!-->
+<ion-content padding class="contenedor">
+  <img src="assets/imgs/logo.svg" class="logo" />
+  <form (ngSubmit)="login()" class="formulario" *ngIf="!_id">
+    <ion-item>
+      <ion-input type="email" [(ngModel)]="formulario.email" name="email" placeholder="Correo electrónico"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="formulario.password" name="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" class="btn-1">Entrar</button>
+  </form>
+</ion-content>
+<!-->FIN CONTENT</!-->

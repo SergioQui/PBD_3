@@ -1,0 +1,71 @@
+<div class="bloque-principal">
+   
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+        <div fxFlex="99" fxLayoutAlign="right end" >
+            <a href="" (click)="authService.logout()">Logout</a>
+
+        </div>
+
+    </div>
+
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+    <div fxFlex="33" fxLayoutAlign="center end" class="bloque-resultados">
+      <div>
+        <div class="bloque-grafica-1">
+          <canvas #graficaBurnout></canvas>
+          <p class="porcentaje-burnout">{{ porcentajeBurnoutUsuarios }}%</p>
+        </div>
+        <p class="titulo">Total de Burnout</p>
+        <p class="texto-1 contraste-1">Burnout: {{ porcentajeBurnoutUsuarios }}%</p>
+        <p class="texto-1 contraste-3">No Burnout: {{ 100 - porcentajeBurnoutUsuarios }}%</p>
+      </div>
+    </div>
+    <div fxFlex="33" fxLayoutAlign="center end" class="bloque-resultados">
+      <div>
+        <div class="bloque-grafica-2">
+          <canvas #graficaBurnoutVsNoBurnout height="225"></canvas>
+        </div>
+        <p class="titulo">Burnout VS No Burnout</p>
+        <p class="texto-1 contraste-1">Usuarios con Burnout: {{ usuariosConBurnout }}</p>
+        <p class="texto-1 contraste-3">Usuarios sin Burnout: {{ usuarios.length - usuariosConBurnout }}</p>
+      </div>
+    </div>
+    <div fxFlex="33" fxLayoutAlign="center end" class="bloque-resultados">
+      <div>
+        <div class="bloque-grafica-2">
+          <canvas #graficaPreguntas height="225"></canvas>
+        </div>
+        <p style="margin-top: 16px; color: #EB5D13" class="texto-1">Cansancio emocional: {{ porcentajeAe }}%</p>
+        <p style="color: #70A63B" class="texto-1">Despersonalizacón: {{ porcentajeD }}%</p>
+        <p style="color: #347193" class="texto-1">Realización personal: {{ porcentajeRp }}%</p>
+      </div>
+    </div>
+  </div>
+  <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+    <div fxFlex="33" class="bloque-resultados">
+      <div fxLayout="row" fxLayoutAlign="center end">
+        <div fxFlex="50">
+          <p class="texto-4">Hombres</p>
+          <p style="color: #2499D3" class="texto-3" [ngClass]="{'contraste-2' : porcentajeBurnoutHombres < 1 }">{{ porcentajeBurnoutHombres }}%</p>
+        </div>
+        <div fxFlex="50">
+          <p class="texto-4">Mujeres</p>
+          <p style="color: #D34C93" class="texto-3" [ngClass]="{'contraste-2' : porcentajeBurnoutMujeres < 1 }">{{ porcentajeBurnoutMujeres }}%</p>
+        </div>
+      </div>
+      <p fxLayoutAlign="center end" class="titulo">Total de Burnout por sexo</p>
+    </div>
+    <div fxFlex="33" fxLayoutAlign="center end" class="bloque-resultados">
+      <div>
+        <p style="color: #F59A00" class="texto-2" [ngClass]="{'contraste-2' : usuariosEncuestados < 1 }">{{ usuariosEncuestados }}</p>
+        <p class="titulo">Usuarios encuestados</p>
+      </div>
+    </div>
+    <div fxFlex="33" fxLayoutAlign="center end" class="bloque-resultados">
+      <div>
+        <p style="color: #82613C" class="texto-2" [ngClass]="{'contraste-2' : encuestasRealizadas < 1 }">{{ encuestasRealizadas }}</p>
+        <p class="titulo">Encuestas realizadas</p>
+      </div>
+    </div>
+  </div>
+</div>

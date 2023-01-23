@@ -1,0 +1,36 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ue.burnoutapp"
+    }
+  },
+  "dependent_plugins": {}
+}

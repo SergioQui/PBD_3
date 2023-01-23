@@ -1,0 +1,75 @@
+page-camara {
+
+  .texto-1 {
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 4px 0 4px 0;
+  }
+
+  .texto-2 {
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .texto-3 {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 28px;
+    color: color($colors, primary);
+  }
+
+  .texto-4 {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .texto-contraste {
+    font-size: 1.1em;
+    color: color($colors, primary);
+  }
+
+  .border-foto {
+    padding: 4px;
+    border: 2px solid color($colors, gris-1);
+    border-radius: 100%;
+    margin: 28px auto 28px auto;
+    width: 192px;
+    height: 192px;
+
+    .foto {
+      background-size: cover;
+      background-position: center;
+      width: 180px;
+      height: 180px;
+      border-radius: 100%;
+    }
+  }
+
+  .btn-1 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .btn-izq {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn-der {
+    background: color($colors, gris-1);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .btn-der.activated{
+    background: color($colors, gris-2);
+    box-shadow: inherit;
+  }
+}

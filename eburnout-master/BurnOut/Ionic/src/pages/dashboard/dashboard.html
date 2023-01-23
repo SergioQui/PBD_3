@@ -1,0 +1,169 @@
+<!-->HEADER</!-->
+<ion-header>
+  <div>
+    <ion-navbar>
+      <ion-title>Dashboard</ion-title>
+    </ion-navbar>
+  </div>
+</ion-header>
+<!-->FIN HEADER</!-->
+
+<!-->CONTENT</!-->
+<ion-content padding>
+  <ion-grid class="grid-graficos-peque">
+    <ion-row>
+      <ion-col class="col-flecha">
+        <ion-icon *ngIf="indice < global.resultadosPreguntas.length - 1" (click)="atras()" name="ios-arrow-back"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <div class="bloque-grafico-burnout">
+          <div class="grafico-burnout">
+            <canvas #graficaBurnout></canvas>
+            <div class="icono">
+              <ion-icon name="flame"></ion-icon>
+            </div>
+          </div>
+          <p>BURNOUT
+            <span [ngClass]="{'color-porcentaje' : porcentajeBurnout > 0 }" class="porcentaje">{{ porcentajeBurnout }}%</span>
+          </p>
+        </div>
+      </ion-col>
+      <ion-col class="col-flecha">
+        <ion-icon *ngIf="indice > 0" (click)="siguiente()" name="ios-arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-graficos-peque">
+    <ion-row>
+      <ion-col>
+        <div class="grafico-peque">
+          <canvas #graficaAE></canvas>
+          <div class="icono">
+            <ion-icon name="battery-charging"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="grafico-peque">
+          <canvas #graficaD></canvas>
+          <div class="icono">
+            <ion-icon name="body"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="grafico-peque">
+          <canvas #graficaRP></canvas>
+          <div class="icono">
+            <ion-icon name="build"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="bloque-btn-detalles">
+    <div (click)="detalles ? detalles = false : detalles = true;" class="btn-detalles">
+      <p class="detalles">Ver más</p>
+      <ion-icon [hidden]="detalles" name="ios-arrow-down"></ion-icon>
+      <ion-icon [hidden]="!detalles" name="ios-arrow-up"></ion-icon>
+    </div>
+  </div>
+  <ion-grid [hidden]="!detalles" class="grid-leyenda">
+    <ion-row>
+      <ion-col class="col-icon">
+        <ion-icon name="battery-charging"></ion-icon>
+      </ion-col>
+      <ion-col col-auto class="col-texto">
+        <p>CANSANCIO EMOCIONAL</p>
+      </ion-col>
+      <ion-col class="col-porcentaje">
+        <p [ngClass]="{'color-porcentaje' : porcentajeAE > 0 }">{{ porcentajeAE }}%</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-icon">
+        <ion-icon name="body"></ion-icon>
+      </ion-col>
+      <ion-col col-auto class="col-texto">
+        <p>DESPERSONALIZACIÓN</p>
+      </ion-col>
+      <ion-col class="col-porcentaje">
+        <p [ngClass]="{'color-porcentaje' : porcentajeD > 0 }">{{ porcentajeD }}%</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-icon">
+        <ion-icon name="build"></ion-icon>
+      </ion-col>
+      <ion-col col-auto class="col-texto">
+        <p>REALIZACIÓN PERSONAL</p>
+      </ion-col>
+      <ion-col class="col-porcentaje">
+        <p [ngClass]="{'color-porcentaje' : porcentajeRP > 0 }">{{ porcentajeRP }}%</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  
+
+    <ion-grid class="grid-graficos-mediano" *ngIf="_fts.have_bracelet()" >
+    
+        <ion-row>
+        
+            <ion-col>
+        
+                <div class="grafico-mediano">
+          
+                    <div #container_sleep style="width: 100%;height:100%;"></div>
+          
+                    <div class="icono">
+                        <img src="assets/imgs/moon.png" class="ico_moon" />
+                    </div>
+                    <div class="subtitle_med">
+                        SLEEP {{ time_sleep }}
+                    </div>
+
+        
+                </div>
+            </ion-col>
+      
+            <ion-col>
+                
+                <div class="grafico-casigrande">
+                    
+                    <!-- <div #container_AHI style="margin-left:10px; margin-top:-50px;  width: 100%;height:200%;"></div>-->
+                    
+                    <canvas #container_AHI style="margin-left:0px; margin-top:0px;  width: 90%; height:90%;"></canvas>
+                    
+                    <div>
+                        HEART {{ bpm_heart }}
+                    </div>
+
+                </div>
+      
+            </ion-col>
+      
+        </ion-row>
+  
+    </ion-grid>
+
+
+
+
+</ion-content>
+<!-->FIN CONTENT</!-->
+
+
+<ion-footer *ngIf="_fts.have_bracelet()">
+    <ion-item *ngIf="status.length>0">
+        <ion-label>
+            {{status}}
+        </ion-label>
+    </ion-item>
+    <ion-item *ngIf="false">
+        <button ion-button block [disabled]="_running" (click)="start()" color="secondary">Start</button>
+        <button ion-button block [disabled]="!_running" (click)="stop()" color="danger">Stop</button>
+    </ion-item>
+
+</ion-footer>

@@ -1,0 +1,186 @@
+<!-->HEADER</!-->
+<ion-header>
+  <div>
+    <ion-navbar>
+      <ion-title>Registro {{ numRegistro }}/3</ion-title>
+    </ion-navbar>
+  </div>
+</ion-header>
+<!-->FIN HEADER</!-->
+
+<!-->CONTENT</!-->
+<ion-content padding>
+  <div *ngIf="numRegistro == 1">
+    <p class="titulo">¿Cuentanos un poquito de ti?</p>
+    <ion-item>
+      <ion-label>Edad</ion-label>
+      <ion-select [(ngModel)]="edad" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="20-24">20-24</ion-option>
+        <ion-option value="25-29">25-29</ion-option>
+        <ion-option value="30-34">30-34</ion-option>
+        <ion-option value="35-39">35-39</ion-option>
+        <ion-option value="40-44">40-44</ion-option>
+        <ion-option value="45-49">45-49</ion-option>
+        <ion-option value="50-54">50-54</ion-option>
+        <ion-option value="55-59">55-59</ion-option>
+        <ion-option value="60-64">60-64</ion-option>
+        <ion-option value="65-69">65-69</ion-option>
+        <ion-option value="70-75">70-75</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sexo</ion-label>
+      <ion-select [(ngModel)]="sexo" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="hombre">Hombre</ion-option>
+        <ion-option value="mujer">Mujer</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estado civil</ion-label>
+      <ion-select [(ngModel)]="estadocivil" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="casado">Casad@</ion-option>
+        <ion-option value="soltero">Solter@</ion-option>
+        <ion-option value="divorciado">Divorciad@</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hij@s</ion-label>
+      <ion-select [(ngModel)]="hijos" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="0">0</ion-option>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="+3">+3</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Altura</ion-label>
+      <ion-select [(ngModel)]="altura" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let altura of alturas" value="{{altura}}">{{ altura }} cm</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Peso</ion-label>
+      <ion-select [(ngModel)]="peso" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let peso of pesos" value="{{peso}}">{{ peso }} kg</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div *ngIf="numRegistro == 2">
+    <p class="titulo">¿A qué te dedicas?</p>
+    <ion-item>
+      <ion-label>Especialidad</ion-label>
+      <ion-select [(ngModel)]="especialidad" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let especialidad of especialidades" value="{{especialidad}}">{{ especialidad }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo de contrato</ion-label>
+      <ion-select [(ngModel)]="tipocontrato" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="residente">Residente</ion-option>
+        <ion-option value="adjunto">Adjunto</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="tipocontrato == 'residente'">
+      <ion-label>Años de residente</ion-label>
+      <ion-select [(ngModel)]="anosresidente" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let anoLaboral of anosLaborales" value="{{anoLaboral}}">
+          {{ anoLaboral }}
+          <span *ngIf="anoLaboral == 1">año</span>
+          <span *ngIf="anoLaboral != 1">años</span>
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="tipocontrato == 'adjunto'">
+      <ion-label>Contrato adjunto</ion-label>
+      <ion-select [(ngModel)]="contratoadjunto" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="eventual">Eventual</ion-option>
+        <ion-option value="interino">Interino</ion-option>
+        <ion-option value="fijo">Fijo</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiempo en la plaza actual</ion-label>
+      <ion-select [(ngModel)]="tiempoplazaactual" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let anoLaboral of anosLaborales" value="{{anoLaboral}}">
+          {{ anoLaboral }}
+          <span *ngIf="anoLaboral == 1">año</span>
+          <span *ngIf="anoLaboral != 1">años</span>
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiempo de vida laboral</ion-label>
+      <ion-select [(ngModel)]="tiempovidalaboral" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let anoLaboral of anosLaborales" value="{{anoLaboral}}">
+          {{ anoLaboral }}
+          <span *ngIf="anoLaboral == 1">año</span>
+          <span *ngIf="anoLaboral != 1">años</span>
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo de trabajo</ion-label>
+      <ion-select [(ngModel)]="tipotrabajo" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="hospitalario">Hospitalario</ion-option>
+        <ion-option value="ambulatorio">Ambulatorio</ion-option>
+        <ion-option value="urgencias">Urgencias</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div *ngIf="numRegistro == 3">
+    <p class="titulo">¿Que haces en tu tiempo libre?</p>
+    <ion-item>
+      <ion-label>Haces ejercicio físico</ion-label>
+      <ion-select [(ngModel)]="ejerciciofisico" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="habitualmente">Habitualmente</ion-option>
+        <ion-option value="ocasionalmente">Ocasionalmente</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lees</ion-label>
+      <ion-select [(ngModel)]="lectura" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="habitualmente">Habitualmente</ion-option>
+        <ion-option value="ocasionalmente">Ocasionalmente</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Escuchas música</ion-label>
+      <ion-select [(ngModel)]="musica" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="habitualmente">Habitualmente</ion-option>
+        <ion-option value="ocasionalmente">Ocasionalmente</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sales socialmente</ion-label>
+      <ion-select [(ngModel)]="salessocialmente" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="habitualmente">Habitualmente</ion-option>
+        <ion-option value="ocasionalmente">Ocasionalmente</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Viajas</ion-label>
+      <ion-select [(ngModel)]="viajas" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="-5">Menos de 5 veces al año</ion-option>
+        <ion-option value="+5">Mas de 5 veces al año</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estudias</ion-label>
+      <ion-select [(ngModel)]="estudias" okText="Aceptar" cancelText="Cancelar">
+        <ion-option value="habitualmente">Habitualmente</ion-option>
+        <ion-option value="ocasionalmente">Ocasionalmente</ion-option>
+        <ion-option value="nunca">Nunca</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <button ion-button (click)="clickBoton()" class="btn-1">
+    Siguiente
+  </button>
+</ion-content>
+<!-->FIN CONTENT</!-->

@@ -1,0 +1,52 @@
+<!-->HEADER</!-->
+<ion-header>
+  <div>
+    <ion-navbar>
+      <ion-title>Encuesta</ion-title>
+    </ion-navbar>
+  </div>
+</ion-header>
+<!-->FIN HEADER</!-->
+
+<!-->CONTENT</!-->
+<ion-content>
+  <p class="num-pregunta">{{ indicePregunta + 1 }} de {{ this.global.questions.length }}</p>
+  <div class="contenedor">
+    <div class="bloque-pregunta">
+      <p class="pregunta">{{ global.questions[indicePregunta].question }}</p>
+    </div>
+    <span *ngIf="global.questions[indicePregunta].type != 'Q'; then bloqueRespuestas else bloqueInput"></span>
+    <ng-template #bloqueRespuestas>
+      <button ion-button icon-only (click)="respuesta(0)" style="background: #A10E2F" class="btn-respuesta">
+        NUNCA
+      </button>
+      <button ion-button icon-only (click)="respuesta(1)" style="background: #82613C" class="btn-respuesta">
+        Algunas veces al AÑO
+      </button>
+      <button ion-button icon-only (click)="respuesta(2)" style="background: #F59A00" class="btn-respuesta">
+        Una vez a MES
+      </button>
+      <button ion-button icon-only (click)="respuesta(3)" style="background: #EB5D13" class="btn-respuesta">
+        Algunas veces al MES
+      </button>
+      <button ion-button icon-only (click)="respuesta(4)" style="background: #2499D3" class="btn-respuesta">
+        Una vez a la SEMANA
+      </button>
+      <button ion-button icon-only (click)="respuesta(5)" style="background: #347193" class="btn-respuesta">
+        Algunas veces a la SEMANA
+      </button>
+      <button ion-button icon-only (click)="respuesta(6)" style="background: #70A63B" class="btn-respuesta">
+        DIARIAMENTE
+      </button>
+    </ng-template>
+    <ng-template #bloqueInput>
+      <form (ngSubmit)="terminar()" class="formulario">
+        <ion-item>
+          <ion-textarea [(ngModel)]="formulario.mensaje" name="mensaje" rows="6" placeholder="Mensaje opcional"></ion-textarea>
+        </ion-item>
+        <button ion-button type="submit" class="btn-1">Terminar</button>
+      </form>
+    </ng-template>
+  </div>
+</ion-content>
+<!-->FIN CONTENT</!-->

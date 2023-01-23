@@ -1,0 +1,128 @@
+/* GLOBAL */
+* {
+  font-size: 13px;
+  color: color($colors, gris-1);
+}
+
+.button-effect {
+  background-color: transparent !important;
+  transform: inherit !important;
+  transition: inherit !important;
+}
+.scroll-content { 
+  overflow-y: auto; 
+}
+
+.enable-hover a:hover {
+  opacity: 1;
+}
+
+.grid {
+  padding: 0;
+}
+
+.col {
+  padding: 0;
+}
+/* FIN GLOBAL */
+
+/*NAVBAR*/
+.toolbar-background { 
+  background: color($colors, primary);
+  border-color: inherit;
+}
+
+.header::after, .tabs[tabsPlacement="top"] > .tabbar::after, .footer::before, .tabs[tabsPlacement="bottom"] > .tabbar::before {
+  background-image: inherit;
+}
+
+ion-title { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.toolbar-title {
+  color: color($colors, blanco);
+  margin: auto;
+  width: calc(100% - 100px);
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* FIN NAVBAR */
+
+/* BOTONES */
+.btn-1 {
+  color: color($colors, blanco);
+  font-weight: bold;
+  box-shadow: inherit;
+  border-radius: 4px;
+
+  ion-icon {
+    color: color($colors, blanco);
+    font-size: 1.75em;
+    margin: 0;
+    padding: 0 12px 0 0;
+  }
+}
+
+.btn-1.activated {
+  background: color($colors, rojo-1);
+  box-shadow: inherit;
+
+  .button-inner {
+    transform: scale(0.9);
+  }
+}
+
+.button-inner {
+  font-size: 1em;
+  color: color($colors, blanco);
+}
+/* FIN BOTONES */
+
+/*TOAST*/
+.toast-md .toast-message {
+  padding: 16px;
+  font-size: 1em;
+  font-weight: 600;
+  color: color($colors, blanco);
+  text-align: center;
+  text-transform: uppercase;
+  background: color($colors, gris-1);
+}
+/*END TOAST*/
+
+/* ALERT */
+.alert-md .alert-button {
+  color: color($colors, blanco);
+  background-color: color($colors, gris-1);
+}
+
+.alert-md .alert-button.activated {
+  color: color($colors, blanco);
+  background-color: color($colors, gris-2);
+}
+/* FIN ALERT */
+
+/* LOADING */
+.loading-md {
+
+  .loading-wrapper {
+    border-radius: 4px;;
+    background: color($colors, gris-1);
+  }
+
+  .loading-content {
+    color: color($colors, blanco);
+  }
+
+  .spinner-crescent circle {
+    stroke: color($colors, blanco);
+  }
+}
+/* FIN LOADING */

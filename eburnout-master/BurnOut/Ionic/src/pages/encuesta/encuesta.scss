@@ -1,0 +1,101 @@
+page-encuesta {
+
+  .num-pregunta {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    color: color($colors, blanco);
+    background: color($colors, gris-1);
+    padding: 2px;
+  }
+
+  .contenedor {
+    padding: 16px;
+  }
+
+  .bloque-pregunta {
+    min-height: 60px;
+
+    .pregunta {
+      font-size: 1.1em;
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0 0 28px 0;
+    }
+  }
+
+  .btn-respuesta {
+    width: 100%;
+    margin: 6px 0;
+    border-radius: 4px;
+    box-shadow: inherit;
+  }
+
+  .btn-respuesta.activated {
+    box-shadow: inherit;
+  
+    .button-inner {
+      transform: scale(0.9);
+    }
+  }
+
+  .respuesta {
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 4px;
+
+    p {
+      color: color($colors, blanco);
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1em;
+      margin: 0;
+    }
+  }
+
+  .formulario {
+
+    .item {
+      padding: 0; 
+      margin: 8px 0;
+      background: transparent;
+    }
+
+    .item.item-block .item-inner {
+      border: inherit;
+      border: 1px solid color($colors, gris-3);
+      border-radius: 4px;
+    }
+
+    .text-input {
+      color: color($colors, gris-3);
+    }
+
+    input::-webkit-input-placeholder {
+      color: color($colors, gris-3);
+    }
+
+    .item.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+      border: 1px solid color($colors, gris-3);
+      box-shadow: inherit;
+    }
+
+    .item.item-input.input-has-focus .item-inner {
+      border: 1px solid color($colors, gris-3);
+      box-shadow: inherit;
+    }
+
+    .button {
+      background: color($colors, gris-1);
+      margin: 16px 0 0 0;
+      width: 100%;
+    }
+
+    .button.activated{
+      background: color($colors, gris-2);
+      box-shadow: inherit;
+    }
+  }
+
+}

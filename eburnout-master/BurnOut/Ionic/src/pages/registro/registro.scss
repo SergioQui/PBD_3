@@ -1,0 +1,50 @@
+page-registro {
+
+  .titulo {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin: 8px 0 24px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .item {
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  .item.item-block .item-inner {
+    padding: 0 16px;
+    border: inherit;
+    border: 1px solid color($colors, gris-4);
+    border-radius: 4px;
+  }
+
+  .item.item-select.input-has-value:not(.input-has-focus) .item-inner {
+    border: 1px solid color($colors, gris-3);
+  }
+  
+  .item-input .label, .item-select .label, .item-datetime .label {
+    color: color($colors, gris-3);
+  }
+
+  .select .select-icon .select-icon-inner {
+    color: color($colors, gris-1);
+  }
+
+  .select-text {
+    margin-right: 16px;
+  }
+
+  .button {
+    background: color($colors, gris-1);
+    margin: 24px 0 0 0;
+    width: 100%;
+  }
+
+  .button.activated{
+    background: color($colors, gris-2);
+    box-shadow: inherit;
+  }
+
+}

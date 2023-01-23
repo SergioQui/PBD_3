@@ -1,0 +1,61 @@
+page-login {
+
+  .contenedor {
+    background-image: url(../assets/imgs/fondo.jpg);
+    background-size: cover;
+    background-position: top;
+  }
+
+  .logo {
+    display: flex;
+    margin: 16px auto 48px auto;
+    height: 30%;
+    max-height: 200px;
+  }
+
+  .formulario {
+    margin-top: 16px;
+    padding: 0 32px;
+
+    .item {
+      padding: 0; 
+      margin: 8px 0;
+      background: transparent;
+    }
+
+    .item.item-block .item-inner {
+      border: inherit;
+      border: 1px solid color($colors, gris-3);
+      border-radius: 4px;
+    }
+
+    .text-input {
+      color: color($colors, gris-3);
+    }
+
+    input::-webkit-input-placeholder {
+      color: color($colors, gris-3);
+    }
+
+    .item.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+      border: 1px solid color($colors, gris-3);
+      box-shadow: inherit;
+    }
+
+    .item.item-input.input-has-focus .item-inner {
+      border: 1px solid color($colors, gris-3);
+      box-shadow: inherit;
+    }
+
+    .button {
+      background: color($colors, gris-1);
+      margin: 16px 0 0 0;
+      width: 100%;
+    }
+
+    .button.activated{
+      background: color($colors, gris-2);
+      box-shadow: inherit;
+    }
+  }
+}

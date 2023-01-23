@@ -1,0 +1,29 @@
+page-tab-general {
+
+  .tabs .tabbar {
+    background: color($colors, gris-1);
+  }
+
+  .tabs .tab-button-text {
+    color: color($colors, blanco);
+    font-size: 0.9em;
+  }
+
+  .tabs .tab-button[aria-selected=true] {
+    background: color($colors, primary);
+    color: color($colors, blanco) !important;
+  }
+
+  .tabs .tab-button[aria-selected=true] .tab-button-text {
+    display: block;
+    transform: inherit;
+    font-weight: 600;
+    color: color($colors, blanco);
+  }
+
+  .tabs .tab-button-icon, .tabs .tab-button[aria-selected=true] .tab-button-icon  {
+    transform: inherit;
+    color: color($colors, blanco);
+  }
+
+}
