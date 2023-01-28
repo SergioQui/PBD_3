@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "./eburnout-master/BurnOutLanding/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
